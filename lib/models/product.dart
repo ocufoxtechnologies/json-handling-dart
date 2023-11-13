@@ -1,15 +1,11 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dart_json_mapper/dart_json_mapper.dart';
 import 'package:json_trial/models/rating.dart';
 
-part 'product.g.dart';
-
-@JsonSerializable()
+@jsonSerializable
 class Product {
   final String image;
   final String title;
-  @JsonKey(
-    name: 'description',
-  )
+  @JsonProperty(name: 'description')
   final String desc;
   final num price;
   final Rating rating;
@@ -21,9 +17,4 @@ class Product {
     required this.price,
     required this.rating,
   });
-
-  factory Product.fromJson(Map<String, dynamic> json) =>
-      _$ProductFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ProductToJson(this);
 }
