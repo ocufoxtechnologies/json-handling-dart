@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:json_trial/product.dart';
 
 class ProductCard extends StatelessWidget {
-  final Map product;
+  final Product product;
 
   const ProductCard({super.key, required this.product});
 
@@ -19,21 +20,21 @@ class ProductCard extends StatelessWidget {
       child: Column(
         children: [
           Image.network(
-            product['image'],
+            product.image,
             height: 300,
           ),
           Row(
             children: [
               Expanded(
                 child: Text(
-                  product['title'],
+                  product.title,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Text(
-                  "USD ${product['price']}",
+                  "USD ${product.price}",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               )
@@ -43,20 +44,20 @@ class ProductCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  product['description'],
+                  product.description,
                 ),
               ),
               Column(
                 children: [
                   Chip(
                     label: Text(
-                      '${product['rating']['rate']}',
+                      '${product.rating.rate}',
                       style: TextStyle(color: Colors.white),
                     ),
                     backgroundColor: Colors.green,
                   ),
                   Text(
-                    "${product['rating']['count']} reviews",
+                    "${product.rating.count} reviews",
                     style: TextStyle(color: Colors.grey),
                   )
                 ],
