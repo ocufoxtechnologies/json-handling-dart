@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:json_trial/product.dart';
+import 'package:json_trial/models/product.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -44,7 +44,7 @@ class ProductCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  product.description,
+                  product.desc,
                 ),
               ),
               Column(
